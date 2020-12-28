@@ -1,5 +1,5 @@
 # Blog App using React Native
-    This is simple Blog App built using React Native
+This is simple Blog App built using React Native
 
 # Install require dependancies
 
