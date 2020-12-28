@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Simple basic level ToDO App built in React Native 😃"
   }
 }
