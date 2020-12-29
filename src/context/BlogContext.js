@@ -1,10 +1,10 @@
-//import liraries
-import React, { useState } from 'react';
+// import libraries
+import React, { useState } from "react"
 
 const BlogContext = React.createContext()
 
 export const BlogProvider = ({ children }) => {
-
+    
     const [blogPosts, setBlogPosts] = useState([])
 
     const addBlogPosts = () => {
@@ -15,8 +15,7 @@ export const BlogProvider = ({ children }) => {
     }
 
     return (
-        <BlogContext.Provider 
-            value={{ data: blogPosts, addBlogPosts }}>
+        <BlogContext.Provider value={{ data: blogPosts, addBlogPosts }}>
             {children}
         </BlogContext.Provider>
     )
