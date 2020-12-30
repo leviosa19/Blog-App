@@ -6,17 +6,17 @@ import BlogContext from '../context/BlogContext'
 // create a component
 const IndexScreen = () => {
 
-    const { data, addBlogPosts } = useContext(BlogContext)
+    const { data, addBlogPost } = useContext(BlogContext)
 
     return (
         <View style={styles.container}>
             <Text>IndexScreen</Text>
-            <Button title="Add Post" onPress={addBlogPosts} />
+            <Button title="Add Post" onPress={addBlogPost} />
+            <Text>Data length: {data.length}</Text>
             <FlatList
                 data={data}
-                keyExtractor={(blogPost) => blogPost.title}
-                renderItem={({ item }) =>
-                    <Text>{item.title}</Text>
+                keyExtractor={blogPost => blogPost.title}
+                renderItem={({ item }) => { return <Text>{item.title}</Text> }
                 }
             />
         </View>
@@ -27,8 +27,6 @@ const IndexScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
         backgroundColor: '#fff',
     },
 });
