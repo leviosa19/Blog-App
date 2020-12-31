@@ -6,7 +6,6 @@ import { EvilIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-// <Ionicons name="add" size={24} color="black" />
 // <Feather name="edit" size={24} color="black" />
 
 // create a component
@@ -38,6 +37,17 @@ const IndexScreen = ({ navigation }) => {
     );
 };
 
+// navigation options
+IndexScreen.navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+                <Ionicons style={styles.addIcon} name="add" size={28} color="black" />
+            </TouchableOpacity>
+        )
+    }
+}
+
 // define your styles
 const styles = StyleSheet.create({
     container: {
@@ -56,6 +66,9 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         width: '90%'
+    },
+    addIcon: {
+        paddingRight: 12
     }
 });
 

@@ -2,24 +2,22 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import { Context } from '../context/BlogContext'
+
 // create a component
-class CreateScreen {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text>CreateScreen</Text>
-            </View>
-        );
-    }
+const CreateScreen = ({ navigation }) => {
+    return (
+        <View style={styles.container}>
+            <Text>CreateScreen</Text>
+        </View>
+    );
 }
 
 // define your styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        backgroundColor: '#fff',
     },
 });
 
