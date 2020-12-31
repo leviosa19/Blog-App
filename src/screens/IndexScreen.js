@@ -15,7 +15,6 @@ const IndexScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Button title="Add Post" onPress={addBlogPost} />
             <Text>Data length: {state.length}</Text>
             <FlatList
                 data={state}
