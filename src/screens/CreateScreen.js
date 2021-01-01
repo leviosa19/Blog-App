@@ -4,6 +4,8 @@ import { View, Text, StyleSheet, Button, TextInput, TouchableOpacity } from 'rea
 
 import { Context } from '../context/BlogContext'
 
+import Textarea from 'react-native-textarea';
+
 // create a component
 const CreateScreen = ({ navigation }) => {
 
@@ -18,19 +20,30 @@ const CreateScreen = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     value={title}
+                    placeholder="Title"
                     onChangeText={(text) => setTitle(text)} />
             </View>
 
             <Text style={styles.label}>Enter Content</Text>
             <View style={styles.inputView}>
-                <TextInput
+                {/* <TextInput
                     style={styles.input}
                     value={content}
-                    onChangeText={(content) => setContent(content)} />
+                    onChangeText={(content) => setContent(content)} /> */}
+                <Textarea
+                    containerStyle={styles.textareaContainer}
+                    style={styles.textarea}
+                    onChangeText={(content) => setContent(content)}
+                    defaultValue={content}
+                    maxLength={120}
+                    placeholder={'Enter Content...'}
+                    placeholderTextColor={'#c7c7c7'}
+                    underlineColorAndroid={'transparent'}
+                />
             </View>
 
-            <TouchableOpacity 
-                style={styles.appButtonContainer} 
+            <TouchableOpacity
+                style={styles.appButtonContainer}
                 onPress={() => addBlogPost(title, content, () => {
                     navigation.navigate('Index')
                 })}
@@ -54,10 +67,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 5,
         margin: 6,
-        marginBottom: 15
-    },
-    inputView: {
-        // paddingHorizontal: 15,
+        marginBottom: 15,
     },
     label: {
         fontSize: 20,
@@ -80,7 +90,24 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         alignSelf: "center",
         textTransform: "uppercase"
-    }
+    },
+    textareaContainer: {
+        // height: 180,
+        padding: 5,
+        marginLeft: 5,
+        marginRight: 15,
+        borderWidth: 1,
+        borderColor: 'lightgray',
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        width: '97%'
+    },
+    textarea: {
+        textAlignVertical: 'top',  // hack android
+        // height: 170,
+        fontSize: 16,
+        color: '#333',
+    },
 });
 
 //make this component available to the app
