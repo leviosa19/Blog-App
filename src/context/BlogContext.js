@@ -11,8 +11,15 @@ const blogReducer = (state, action) => {
                     content: action.payload.content
                 }
             ]
+
         case 'delete_BlogPost':
             return state.filter((blogPost) => blogPost.id !== action.payload)
+
+        case 'edit_BlogPost': 
+            return state.map((blogPost) => {
+                return blogPost.id === action.payload.id ? action.payload : blogPost 
+            })
+
         default:
             return state
     }
@@ -21,7 +28,9 @@ const blogReducer = (state, action) => {
 const addBlogPost = (dispatch) => {
     return (title, content, callback) => {
         dispatch({ type: 'add_BlogPost', payload: { title, content } })
-        callback()
+        if (callback) {
+            callback()
+        }
     }
 }
 
@@ -31,5 +40,13 @@ const deleteBlogPost = (dispatch) => {
     }
 }
 
+const editBlogPost = (dispatch) => {
+    return (id, title, content, callback) => {
+        dispatch({ type: 'edit_BlogPost', payload: { id, title, content } })
+        if (callback) {
+            callback()
+        }
+    }
+}
 
-export const { Context, Provider } = createDataContext(blogReducer, { addBlogPost, deleteBlogPost }, [{id: 1, title: "Zerodha Broking Ltd ", content: "Dear RUSHIKESH PRAVIN JADE,Attached is the daily equity margin statement for December 30, 2020 for your account OT9013.To read more on how to interpret this margin statement, click here. Copy of this margin statement is also available on our reporting platform Console. Sincerely, Team Zerodha"}])
+export const { Context, Provider } = createDataContext(blogReducer, { addBlogPost, deleteBlogPost, editBlogPost }, [{id: 1, title: "Zerodha Broking Ltd ", content: "Dear RUSHIKESH PRAVIN JADE,Attached is the daily equity margin statement for December 30, 2020 for your account OT9013.To read more on how to interpret this margin statement, click here. Copy of this margin statement is also available on our reporting platform Console. Sincerely, Team Zerodha"}])

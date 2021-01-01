@@ -31,7 +31,7 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
                     style={styles.textarea}
                     onChangeText={(newContent) => setContent(newContent)}
                     defaultValue={content}
-                    maxLength={500}
+                    maxLength={5000}
                     placeholder={'Enter Content...'}
                     placeholderTextColor={'#c7c7c7'}
                     underlineColorAndroid={'transparent'}
