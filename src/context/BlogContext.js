@@ -32,4 +32,4 @@ const deleteBlogPost = (dispatch) => {
 }
 
 
-export const { Context, Provider } = createDataContext(blogReducer, { addBlogPost, deleteBlogPost }, [])
+export const { Context, Provider } = createDataContext(blogReducer, { addBlogPost, deleteBlogPost }, [{id: 1, title: "Zerodha Broking Ltd ", content: "Dear RUSHIKESH PRAVIN JADE,Attached is the daily equity margin statement for December 30, 2020 for your account OT9013.To read more on how to interpret this margin statement, click here. Copy of this margin statement is also available on our reporting platform Console. Sincerely, Team Zerodha"}])

@@ -6,8 +6,6 @@ import { EvilIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-// <Feather name="edit" size={24} color="black" />
-
 // create a component
 const IndexScreen = ({ navigation }) => {
 

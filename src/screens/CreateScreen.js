@@ -1,114 +1,26 @@
 //import liraries
-import React, { useState, useContext } from 'react';
-import { View, Text, StyleSheet, Button, TextInput, TouchableOpacity } from 'react-native';
+import React, { useContext } from 'react';
+import { StyleSheet } from 'react-native';
 
 import { Context } from '../context/BlogContext'
-
-import Textarea from 'react-native-textarea';
+import BlogPostForm from '../components/BlogPostForm';
 
 // create a component
 const CreateScreen = ({ navigation }) => {
 
-    const [title, setTitle] = useState('')
-    const [content, setContent] = useState('')
     const { addBlogPost } = useContext(Context)
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.label}>Enter Title</Text>
-            <View style={styles.inputView}>
-                <TextInput
-                    style={styles.input}
-                    value={title}
-                    placeholder="Title"
-                    onChangeText={(text) => setTitle(text)} />
-            </View>
-
-            <Text style={styles.label}>Enter Content</Text>
-            <View style={styles.inputView}>
-                {/* <TextInput
-                    style={styles.input}
-                    value={content}
-                    onChangeText={(content) => setContent(content)} /> */}
-                <Textarea
-                    containerStyle={styles.textareaContainer}
-                    style={styles.textarea}
-                    onChangeText={(content) => setContent(content)}
-                    defaultValue={content}
-                    maxLength={120}
-                    placeholder={'Enter Content...'}
-                    placeholderTextColor={'#c7c7c7'}
-                    underlineColorAndroid={'transparent'}
-                />
-            </View>
-
-            <TouchableOpacity
-                style={styles.appButtonContainer}
-                onPress={() => addBlogPost(title, content, () => {
-                    navigation.navigate('Index')
-                })}
-            >
-                <Text style={styles.appButtonText}>Save</Text>
-            </TouchableOpacity>
-        </View>
+        <BlogPostForm
+            onSubmit={(title, content) => {
+                addBlogPost(title, content, () => navigation.navigate('Index'))
+            }}
+        />
     );
 }
 
 // define your styles
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-    input: {
-        fontSize: 16,
-        borderWidth: 1,
-        borderColor: 'lightgray',
-        borderRadius: 5,
-        padding: 5,
-        margin: 6,
-        marginBottom: 15,
-    },
-    label: {
-        fontSize: 20,
-        fontWeight: '600',
-        marginBottom: 5,
-        paddingTop: 12,
-        paddingLeft: 4
-    },
-    appButtonContainer: {
-        backgroundColor: "#219ebc",
-        borderRadius: 5,
-        paddingVertical: 10,
-        paddingHorizontal: 12,
-        marginHorizontal: 100,
-        marginTop: 18
-    },
-    appButtonText: {
-        fontSize: 16,
-        color: "#fff",
-        fontWeight: "bold",
-        alignSelf: "center",
-        textTransform: "uppercase"
-    },
-    textareaContainer: {
-        // height: 180,
-        padding: 5,
-        marginLeft: 5,
-        marginRight: 15,
-        borderWidth: 1,
-        borderColor: 'lightgray',
-        borderRadius: 5,
-        backgroundColor: '#fff',
-        width: '97%'
-    },
-    textarea: {
-        textAlignVertical: 'top',  // hack android
-        // height: 170,
-        fontSize: 16,
-        color: '#333',
-    },
-});
+const styles = StyleSheet.create({});
 
 //make this component available to the app
 export default CreateScreen
