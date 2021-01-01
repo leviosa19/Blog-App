@@ -1,6 +1,6 @@
 # Blog App using React Native
 
-This is simple Blog App built using React Native
+This is simple Blog App built using React Native. Expo Link: https://expo.io/@rushijade/projects/blogapp/
 
 # Install require dependancies
 
