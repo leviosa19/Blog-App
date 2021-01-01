@@ -13,11 +13,17 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
         <View style={styles.container}>
             <Text style={styles.label}>Enter Title</Text>
             <View style={styles.inputView}>
-                <TextInput
-                    style={styles.input}
-                    value={title}
-                    placeholder="Title"
-                    onChangeText={(newTitle) => setTitle(newTitle)} />
+
+                <Textarea
+                    containerStyle={styles.textareaContainer}
+                    style={styles.textarea}
+                    onChangeText={(newTitle) => setTitle(newTitle)}
+                    defaultValue={title}
+                    maxLength={200}
+                    placeholder={'Enter Title...'}
+                    placeholderTextColor={'#c7c7c7'}
+                    underlineColorAndroid={'transparent'}
+                />
             </View>
 
             <Text style={styles.label}>Enter Content</Text>
@@ -96,19 +102,20 @@ const styles = StyleSheet.create({
     textareaContainer: {
         // height: 180,
         padding: 5,
-        marginLeft: 5,
+        marginLeft: 7,
         marginRight: 15,
         borderWidth: 1,
         borderColor: 'lightgray',
         borderRadius: 5,
         backgroundColor: '#fff',
-        width: '97%'
+        width: '94%',
     },
     textarea: {
         textAlignVertical: 'top',  // hack android
         // height: 170,
         fontSize: 16,
         color: '#333',
+        justifyContent: 'center'
     },
 });
 
