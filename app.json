@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ToDo",
-    "slug": "ToDo",
+    "name": "Blog App",
+    "slug": "blogapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "Simple basic level ToDO App built in React Native 😃"
+    "description": "Simple basic level Blog App built in React Native 🔥🔥",
+    "githubUrl": "https://github.com/leviosa19/Blog-App"
   }
 }
