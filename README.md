@@ -3,7 +3,7 @@
 This is simple Blog App built using React Native. Expo Link: https://expo.io/@rushijade/projects/blogapp/
 
 Expo QR Code
-![plot](./Project-Diagram.png)
+<img src="./Project-Diagram.png" height="160" width="160">
 
 # Install require dependancies
 
