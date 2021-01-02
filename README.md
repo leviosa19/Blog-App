@@ -1,6 +1,7 @@
 # Blog App using React Native
 
 This is simple Blog App built using React Native. Expo Link: https://expo.io/@rushijade/projects/blogapp/
+`json-server` is used to create fake REST API for blog data like title, content and `ngrok` is used to create basic http-https-tcp tunnel
 
 Expo QR Code
 
