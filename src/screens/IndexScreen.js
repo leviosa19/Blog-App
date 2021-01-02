@@ -28,6 +28,7 @@ const IndexScreen = ({ navigation }) => {
             {/* <Text>Data length: {state.length}</Text> */}
             <FlatList
                 data={state}
+                showsHorizontalScrollIndicator={false}
                 keyExtractor={blogPost => blogPost.title}
                 renderItem={({ item }) => {
                     return (
