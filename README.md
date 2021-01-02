@@ -5,6 +5,8 @@ This is simple Blog App built using React Native. Expo Link: https://expo.io/@ru
 Expo QR Code
 <img src="./Project-Diagram.png" height="160" width="160">
 
+[![Screenshot-331.png](https://i.postimg.cc/9XDqWTVp/Screenshot-331.png)](https://postimg.cc/5jMtgXXY)
+
 # Install require dependancies
 
 1. npm install react-navigation
